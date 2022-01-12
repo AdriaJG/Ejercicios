@@ -1,0 +1,72 @@
+
+public class TA4APP {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// 1
+		int num1 = 12;
+		int num2 = 88;
+		
+		System.out.println(num1 + num2);
+		
+		System.out.println(num1 - num2);
+
+		System.out.println(num1 * num2);
+
+		System.out.println(num1 / num2);
+		
+		System.out.println(num1 % num2);
+
+		// 2
+		
+		int N = 10;
+		double A = 11;
+		char C = '7';
+		
+		System.out.println("Variable N =" + N);
+		
+		System.out.println("Variable A =" + A);
+		
+		System.out.println("Variable C =" + C);
+		
+		System.out.println(N + "+" + A + "=" +(N+A));
+		
+		System.out.println(A + "-" + N + "=" +(A-N));
+		
+		System.out.println("Valor numerico del caracter" + C +( C + 0));
+		
+		//3
+		
+		
+		
+		//4
+		
+		int N2 = 12;
+		System.out.println("Valor inicial de N = " + N2);
+		N2 += 77;
+		System.out.println(N2 - 77 +" +  77 = " + N2);
+		N2 -= 3;
+		System.out.println(N2 + 3 +" -  3 = " + N2);
+		N2 *= 2;
+		System.out.println(N2 / 2 +" *  2 = " + N2);
+		
+		// 5
+		
+		int A2 = 1;
+		int B2 = 2;
+		int C2 = 3;
+		int D2 = 4;
+		
+		B2 = C2;
+		C2 = A2;
+		A2 = D2;
+		B2 = B2;
+		
+		System.out.println("Valor de A " + A2);
+		System.out.println("Valor de B " + B2);
+		System.out.println("Valor de C " + C2);
+		System.out.println("Valor de D " + D2);
+	}
+
+}
