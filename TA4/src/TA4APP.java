@@ -38,7 +38,39 @@ public class TA4APP {
 		
 		//3
 		
+		int x = 2;
+		int y = 4;
+		double n = 6;
+		double m = 12;
 		
+		System.out.println("El valor de X es =" + x);
+		System.out.println("El valor de Y es =" + y);
+
+		System.out.println("El valor de N es =" + n);
+		System.out.println("El valor de M es =" + m);
+		
+		System.out.println(x+y);
+		System.out.println(x-y);
+		System.out.println(x*y);
+		System.out.println(x/y);
+		System.out.println(x%y);
+		
+		System.out.println(n+m);
+		System.out.println(n-m);
+		System.out.println(n*m);
+		System.out.println(n/m);
+		System.out.println(n%m);
+		
+		System.out.println("Doble de cada variable");
+		
+		System.out.println(x*2);
+		System.out.println(y*2);
+		System.out.println(n*2);
+		System.out.println(m*2);
+		
+		System.out.println("La suma total de las variables es " + (x+y+n+m));
+		
+		System.out.println("El producto total de las variables es " + (x*y*n*m));
 		
 		//4
 		
