@@ -170,6 +170,49 @@ public class TA6 {
 	}
 	
 	// 11
+	public static void dosArray() {
+		System.out.println("Tamaño del array");
+		int tamaño = teclado.nextInt();
+		int array1[] = new int[tamaño];
+		int array2[] = new int[tamaño];
+		int arrayResultado[];
+		
+		for (int i = 0; i < array1.length; i++) {
+			array1[i] = (int)Math.random() * 10;
+			array2[i] = array1[i];
+			array2[i] = (int)Math.random() * 10;
+			
+		}
+		
+		arrayResultado = multiArray(array1, array2);
+		for (int i = 0; i < arrayResultado.length; i++) {
+			System.out.println("Posicion " + i + " " + array1[i] + " x " + array2[i] + " = " + (array1[i] * array2[i]));
+		}
+		
+	}
+	
+	public static int[] multiArray(int array1[], int array2[]){
+		int arrayResultado[] = new int[array1.length];
+		
+		for (int i = 0; i < arrayResultado.length; i++) {
+			arrayResultado[i] = array1[i] - array2[i];
+			
+		}
+		
+		return arrayResultado;
+	}
+	// 12
+	
+	public static void numerosFinalizadosEn () {
+		System.out.println("Tamaño del array");
+		int tamaño = teclado.nextInt();
+		Integer array[] = new Integer [tamaño];
+		
+		for (int i = 0; i < array.length; i++) {
+			array[i] = Integer.valueOf((int) (Math.random()*300));
+			//array[i].
+		}
+	}
 	
 
 }
