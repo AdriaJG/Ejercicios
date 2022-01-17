@@ -1,7 +1,7 @@
 
 public class Persona {
-	private final char HOMBRE = 'H';
-	private final char MUJER = 'M';
+	final char HOMBRE = 'H';
+	final char MUJER = 'M';
 	private String nombre = "";
 	private int edad = 0;
 	private String DNI;
@@ -17,20 +17,24 @@ public class Persona {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.DNI = dNI;
-		this.sexo = sexo;
+		this.sexo = sexoCorrecto(sexo);
 	}
 
 	public Persona(String nombre, int edad, String dNI, char sexo, double peso, double altura) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.DNI = dNI;
-		this.sexo = sexo;
+		this.sexo = sexoCorrecto(sexo);
 		this.peso = peso;
 		this.altura = altura;
 	}
 	
-	
-	
-	
-	
+	public char sexoCorrecto(char sexo) {
+		if (sexo == HOMBRE || sexo == MUJER) {
+			return sexo;
+		} else {
+			return HOMBRE;
+		}
+	}
+
 }

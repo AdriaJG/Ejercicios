@@ -17,9 +17,15 @@ public class Electrodomestico {
 	public Electrodomestico(double precioBase, String color, char consumoEnergetico, double peso) {
 		this.precioBase = precioBase;
 		this.color = color;
-		this.consumoEnergetico = consumoEnergetico;
+		this.consumoEnergetico = eficienciaCorrecta(consumoEnergetico);
 		this.peso = peso;
 	}
 	
-	
+	public char eficienciaCorrecta(Character eficiencia) {
+		if (Character.toUpperCase(eficiencia) >= 'A' && Character.toUpperCase(eficiencia) <= 'F') {
+			return eficiencia;
+		} else {
+			return 'F';
+		}
+	}
 }
