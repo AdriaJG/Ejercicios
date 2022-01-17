@@ -25,10 +25,12 @@ public class TA7234 {
 		carrito.put(producto, infoProducto);
 	}
 	
-	public static void generarTicket(double cantidadPagada) {
+	public static void generarTicket() {
 		double totalPrecio = 0;
 		int numTotalArticulos = 0;
 		int IVA;
+		double cantidadPagada = 0;
+		double cantidadConIVA;
 		
 		for(String producto: carrito.keySet()) {
 			totalPrecio += carrito.get(producto).get(PRECIO) * carrito.get(producto).get(CANTIDAD);
@@ -41,12 +43,19 @@ public class TA7234 {
 			IVA = 4;
 		}
 		
+		cantidadConIVA = (totalPrecio + (IVA * 100 / totalPrecio));
+		
+		while (cantidadPagada < (totalPrecio + (IVA * 100 / totalPrecio))) {
+			cantidadPagada = Double.valueOf(JOptionPane.showInputDialog("Cantidad a pagar" + cantidadConIVA));
+			
+		}
+		
 		System.out.println("IVA " + IVA);
 		System.out.println("Total Articulos " + numTotalArticulos);
 		System.out.println("Total precio sin IVA " + totalPrecio);
-		System.out.println("Precio total " + (totalPrecio + (IVA * 100 / totalPrecio)));
+		System.out.println("Precio total " + (cantidadConIVA));
 		System.out.println("Cantidad pagada " + cantidadPagada);
-		System.out.println("Cambio " + (totalPrecio - (totalPrecio + (IVA * 100 / totalPrecio))));
+		System.out.println("Cambio " + (totalPrecio - cantidadConIVA));
 		
 	}
 	//3
@@ -79,6 +88,33 @@ public class TA7234 {
 	
 	// 4
 	
+	//Pedimos el nombre del producto
+	
+	public static void productoAAñadir() {
+		String producto = JOptionPane.showInputDialog("Que producto quieres comprar?");
+		if (productoExiste(producto)) {
+			double cantidad = Double.valueOf(JOptionPane.showInputDialog("Cantidad que desea comprar max " + almacen.get(producto).get(CANTIDAD)));
+			while (!tieneStock(producto) || cantidad > almacen.get(producto).get(CANTIDAD)) {
+				cantidad = Double.valueOf(JOptionPane.showInputDialog("Cantidad ERRONIA, maximo " + almacen.get(producto).get(CANTIDAD)));
+			}
+			
+			
+			
+			int confirmado = JOptionPane.showConfirmDialog(null,"¿Añadir otro producto a la cesta?");
+			añadirCompra(producto, cantidad);
+			
+			if (JOptionPane.OK_OPTION == confirmado) {
+				productoAAñadir();
+				
+			} else {
+				generarTicket();
+			}
+			
+		} else {
+			JOptionPane.showConfirmDialog(null, "El producto no existe");
+			productoAAñadir();
+		}
+	}
 	
 	//Comprovar si el producto existe
 	public static boolean productoExiste(String producto) {
@@ -103,6 +139,6 @@ public class TA7234 {
 	//Restamos la cantidad al stock
 	
 	public static void retirarCantidad(int cantidad, String producto) {
-		if(almacen.get(producto).get(CANTIDAD) > 0);
+		
 	}
 }
