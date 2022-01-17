@@ -210,7 +210,17 @@ public class TA6 {
 		
 		for (int i = 0; i < array.length; i++) {
 			array[i] = Integer.valueOf((int) (Math.random()*300));
-			//array[i].
+		}
+		
+		for (int i = 0; i < array.length; i++) {
+			int numero = array[i];
+			while (numero / 10 > 0) {
+				numero /= 10;
+			}
+			
+			if (numero == 5) {
+				System.out.println(numero);
+			}
 		}
 	}
 	
